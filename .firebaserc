@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "theleague-89323"
+  },
+  "targets": {
+    "theleague-89323": {
+      "hosting": {
+        "theLeague": [
+          "theleague-89323"
+        ]
+      }
+    }
   }
 }

@@ -101,6 +101,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "theLeague:build:production",
+            "firebaseProject": "theleague-89323",
+            "firebaseHostingSite": "theleague-89323"
+          }
         }
       }
     }
