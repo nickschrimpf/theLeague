@@ -1,3 +1,30 @@
 .example-spacer {
     flex: 1 1 auto;
-  }
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.desk-top--nav {
+    display: none;
+}
+
+@media screen and (min-width:700px) {
+    .desk-top--nav {
+        display: flex;
+    }
+    .navItems {
+        display: flex;
+        padding: 0px;
+        list-style: none;
+    }
+    .mobile-menu{
+        display: none;
+    }
+    li {
+        margin:0 .5rem;
+    }
+
+    
+}

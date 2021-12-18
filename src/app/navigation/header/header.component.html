@@ -1,16 +1,18 @@
 <mat-toolbar color="primary">
-    <div>
-        <button mat-icon-button >
+    <div class="mobile-menu">
+        <button mat-icon-button>
             <mat-icon>menu</mat-icon>
         </button>
     </div>
-    
-    <span>TheLeague</span>
+    <div>
+        <a routerLink="">theLeague</a>
+    </div>
     <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>favorite</mat-icon>
-    </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-      <mat-icon>share</mat-icon>
-    </button>
+    <div class="desk-top--nav">
+        <ul class="navItems">
+            <li>Sign Up</li>
+            <li>Login</li>
+            <li>Log Out</li>
+        </ul>
+    </div>
 </mat-toolbar>
