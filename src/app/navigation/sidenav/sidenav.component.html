@@ -1,13 +1,13 @@
 <mat-nav-list>
-    <a mat-list-item (click)="onClose()"  routerLink="/signup">
+    <a *ngIf="!isLoggedIn" mat-list-item (click)="onClose()"  routerLink="/signup">
         <mat-icon>face</mat-icon>
         <span class="nav-caption">Sign Up</span>
     </a>
-    <a mat-list-item (click)="onClose()"  routerLink="/login">
+    <a *ngIf="!isLoggedIn" mat-list-item (click)="onClose()"  routerLink="/login">
         <mat-icon>login</mat-icon>
         <span class="nav-caption">Login</span>
     </a>
-    <a mat-list-item (click)="onClose()"  routerLink="">
+    <a *ngIf="isLoggedIn" mat-list-item (click)="onClose()"  routerLink="">
         <mat-icon>eject</mat-icon>
         <span class="nav-caption">log Out</span>
     </a>

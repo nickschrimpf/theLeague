@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-sidenav',
@@ -6,11 +7,14 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./sidenav.component.css']
 })
 export class SidenavComponent implements OnInit {
-@Output() drawerCloser = new EventEmitter<void>()
-
-  constructor() { }
+@Output() drawerCloser = new EventEmitter<void>();
+isLoggedIn:boolean = false;
+  constructor(private auth:AuthService) { }
 
   ngOnInit(): void {
+    this.auth.authChange.subscribe(isAuth => {
+      this.isLoggedIn = isAuth
+    })
   }
 
   onClose(){
