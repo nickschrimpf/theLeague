@@ -1,6 +1,6 @@
 <section>
     <form #f='ngForm' (ngSubmit)="onSubmit(f)">
-        <mat-form-field appearance="standard">
+        <mat-form-field >
             <mat-label>User Name</mat-label>
             <input
                 ngModel
@@ -11,6 +11,7 @@
                 required
                 #userNameInput="ngModel">
         </mat-form-field>
+
         <mat-form-field>
             <mat-label>Email</mat-label>
             <input
@@ -26,11 +27,12 @@
             <mat-label>Password</mat-label>
             <input
                 ngModel
-                name='Password'
+                name='password'
                 matInput
-                type="Password"
+                type="password"
                 placeholder="enter your password "
                 required
+                autocomplete="off"
                 #passwordInput="ngModel">
         </mat-form-field>
         <button mat-raised-button type="submit" color="primary">submit</button>
