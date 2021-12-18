@@ -14,6 +14,8 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidenavComponent } from './navigation/sidenav/sidenav.component';
 import { HeaderComponent } from './navigation/header/header.component';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -29,6 +31,7 @@ import { HeaderComponent } from './navigation/header/header.component';
     MaterialsModule,
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
