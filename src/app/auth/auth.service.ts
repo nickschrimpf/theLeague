@@ -26,6 +26,19 @@ export class AuthService {
       console.log(error)
     });
   }
+  initAuthListener(){
+    this.auth.authState.subscribe(user => {
+      if(user){
+        this.isLoggedIn = true;
+        this.authChange.next(true);
+        this.router.navigate(['/dashboard']);
+      }else{
+        this.isLoggedIn = false;
+        this.authChange.next(false);
+        this.router.navigate(['/login']);
+      }
+    })
+  }
 
   isAuth(){
     return this.isLoggedIn
