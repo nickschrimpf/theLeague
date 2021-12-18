@@ -1,13 +1,13 @@
-<mat-sidenav-container>
-    <mat-sidenav>
+<mat-drawer-container>
+    <mat-drawer #drawer>
         <app-sidenav></app-sidenav>
-    </mat-sidenav>
+    </mat-drawer>
     
-    <mat-sidenav-content>
-        <app-header></app-header>
+    <mat-drawer-content>
+        <app-header (click)="drawer.toggle()"></app-header>
         <main>
             <router-outlet></router-outlet>
         </main>
-    </mat-sidenav-content>
-</mat-sidenav-container>
+    </mat-drawer-content>
+</mat-drawer-container>
 

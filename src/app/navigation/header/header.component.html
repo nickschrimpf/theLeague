@@ -1,6 +1,9 @@
 <mat-toolbar color="primary">
     <div class="mobile-menu">
-        <button mat-icon-button>
+        <button
+            mat-icon-button
+            (click)="onToggleSidenav()"
+        >
             <mat-icon>menu</mat-icon>
         </button>
     </div>
@@ -10,9 +13,9 @@
     <span class="example-spacer"></span>
     <div class="desk-top--nav">
         <ul class="navItems">
-            <li>Sign Up</li>
-            <li>Login</li>
-            <li>Log Out</li>
+            <li><a routerLink="/signUp">Sign Up</a></li>
+            <li><a routerLink="/signUp">Login</a></li>
+            <li><a routerLink="/signUp">Log Out</a></li>
         </ul>
     </div>
 </mat-toolbar>
