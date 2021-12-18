@@ -26,6 +26,12 @@ export class AuthService {
       console.log(error)
     });
   }
+  logUserOut(){
+    this.auth.signOut();
+    this.isLoggedIn = false;
+    this.authChange.next(false);
+    this.router.navigate([''])
+  }
   initAuthListener(){
     this.auth.authState.subscribe(user => {
       if(user){

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/auth/auth.service';
 
@@ -8,21 +8,29 @@ import { AuthService } from 'src/app/auth/auth.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
   @Output() drawerToggle = new EventEmitter<void>()
   isloggedIn:boolean = false;
+  authSub = new Subscription
 
   constructor(
-    private authService:AuthService
+    private auth:AuthService
   ) { }
 
   ngOnInit(): void {
-    this.authService.authChange.subscribe(isAuth => {
+    this.authSub = this.auth.authChange.subscribe(isAuth => {
       this.isloggedIn = isAuth
     })
+  }
+  ngOnDestroy(): void {
+      this.authSub.unsubscribe()
   }
   onToggleSidenav(){
     this.drawerToggle.emit()
   }
+  onLogOut(){
+    this.auth.logUserOut()
+  }
+
 
 }
