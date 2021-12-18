@@ -16,6 +16,7 @@ import { SidenavComponent } from './navigation/sidenav/sidenav.component';
 import { HeaderComponent } from './navigation/header/header.component';
 import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire/compat';
+import { HomeComponent } from './dashboard/home/home.component';
 
 
 
@@ -27,6 +28,7 @@ import { AngularFireModule } from '@angular/fire/compat';
     SignUpComponent,
     SidenavComponent,
     HeaderComponent,
+    HomeComponent,
   ],
   imports: [
     MaterialsModule,

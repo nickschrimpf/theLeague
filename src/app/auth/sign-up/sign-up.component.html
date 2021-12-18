@@ -1,40 +1,42 @@
 <section>
     <form #f='ngForm' (ngSubmit)="onSubmit(f)">
-        <mat-form-field >
-            <mat-label>User Name</mat-label>
-            <input
-                ngModel
-                name='userName'
-                matInput
-                type="text"
-                placeholder="chose a user name"
-                required
-                #userNameInput="ngModel">
-        </mat-form-field>
+        <div class="form-input-items">
+            <mat-form-field >
+                <mat-label>User Name</mat-label>
+                <input
+                    ngModel
+                    name='userName'
+                    matInput
+                    type="text"
+                    placeholder="chose a user name"
+                    required
+                    #userNameInput="ngModel">
+            </mat-form-field>
 
-        <mat-form-field>
-            <mat-label>Email</mat-label>
-            <input
-                ngModel
-                name='email'
-                matInput
-                type="email"
-                placeholder="enter your email "
-                required
-                #emailInput="ngModel">
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Password</mat-label>
-            <input
-                ngModel
-                name='password'
-                matInput
-                type="password"
-                placeholder="enter your password "
-                required
-                autocomplete="off"
-                #passwordInput="ngModel">
-        </mat-form-field>
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input
+                    ngModel
+                    name='email'
+                    matInput
+                    type="email"
+                    placeholder="enter your email "
+                    required
+                    #emailInput="ngModel">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input
+                    ngModel
+                    name='password'
+                    matInput
+                    type="password"
+                    placeholder="enter your password "
+                    required
+                    autocomplete="off"
+                    #passwordInput="ngModel">
+            </mat-form-field>
+        </div>
         <button mat-raised-button type="submit" color="primary">submit</button>
     </form>
 </section>

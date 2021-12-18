@@ -20,7 +20,7 @@ export class AuthService {
     this.auth.createUserWithEmailAndPassword(authData.email,authData.password).then(result => {
       this.authChange.next(true);
       this.isLoggedIn = true
-      this.router.navigate['']
+      this.router.navigate(['/dashboard'])
       console.log(result)
     }).catch(error => {
       console.log(error)
