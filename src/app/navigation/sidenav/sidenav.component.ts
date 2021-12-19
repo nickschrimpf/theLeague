@@ -27,6 +27,7 @@ authSub:Subscription
     this.drawerCloser.emit()
   }
   onLogOut(){
+    this.onClose()
     this.auth.logUserOut()
   }
 }
