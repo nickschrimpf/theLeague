@@ -26,6 +26,18 @@ export class AuthService {
       console.log(error)
     });
   }
+
+  logUserIn(authData:AuthData){
+    this.auth.signInWithEmailAndPassword(authData.email,authData.password).then(result => {
+      this.authChange.next(true);
+      this.isLoggedIn = true;
+      this.router.navigate(['/dashboard']);
+    }).catch(error => {
+      console.log(error)
+    })
+    
+  }
+
   logUserOut(){
     this.auth.signOut();
     this.isLoggedIn = false;

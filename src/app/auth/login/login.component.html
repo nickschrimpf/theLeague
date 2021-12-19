@@ -1,1 +1,32 @@
-<p>login works!</p>
+<section class="log-in-form">
+    <form #f='ngForm' (ngSubmit)="onSubmit(f)">
+        <div class="log-in-form--items">
+            <mat-form-field>
+                <input
+                    ngModel
+                    name="email"
+                    matInput
+                    type="email"
+                    placeholder="enter your email"
+                    email
+                    required
+                    #emailInput="ngModel">
+            </mat-form-field>
+            <mat-form-field>
+                <input
+                    ngModel
+                    name="password"
+                    matInput
+                    type="password"
+                    placeholder="enter your password"
+                    password
+                    required
+                    autocomplete="on"
+                    #passwordInput="ngModel"
+                    >
+            </mat-form-field>
+        </div>
+        
+        <button mat-raised-button color="primary">Submit</button>
+    </form>
+</section>

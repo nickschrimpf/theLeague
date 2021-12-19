@@ -1,0 +1,10 @@
+.log-in-form--items {
+    display: flex;
+    flex-direction: column;
+}
+mat-form-field{
+    width: 300px;
+    margin: auto auto;
+    
+}
+
