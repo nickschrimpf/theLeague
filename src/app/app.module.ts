@@ -17,6 +17,7 @@ import { HeaderComponent } from './navigation/header/header.component';
 import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire/compat';
 import { HomeComponent } from './dashboard/home/home.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 
@@ -35,6 +36,7 @@ import { HomeComponent } from './dashboard/home/home.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
