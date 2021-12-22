@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlayerService } from './player.service';
 
 @Component({
   selector: 'app-commish-tools',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommishToolsComponent implements OnInit {
 
-  constructor() { }
+  
+
+
+  constructor(private playerService:PlayerService) { }
 
   ngOnInit(): void {
   }
+
+ 
 
 }
