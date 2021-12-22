@@ -17,7 +17,11 @@ import { HeaderComponent } from './navigation/header/header.component';
 import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire/compat';
 import { HomeComponent } from './dashboard/home/home.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CommishToolsComponent } from './commish-tools/commish-tools.component';
+import { MyTeamComponent } from './dashboard/my-team/my-team.component';
+import { ActionsComponent } from './dashboard/actions/actions.component';
+import { LeagueComponent } from './dashboard/league/league.component';
+
 
 
 
@@ -30,13 +34,16 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     SidenavComponent,
     HeaderComponent,
     HomeComponent,
+    CommishToolsComponent,
+    MyTeamComponent,
+    ActionsComponent,
+    LeagueComponent,
   ],
   imports: [
     MaterialsModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
