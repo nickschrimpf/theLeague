@@ -21,6 +21,7 @@ import { CommishToolsComponent } from './commish-tools/commish-tools.component';
 import { MyTeamComponent } from './dashboard/my-team/my-team.component';
 import { ActionsComponent } from './dashboard/actions/actions.component';
 import { LeagueComponent } from './dashboard/league/league.component';
+import { PlayersComponent } from './commish-tools/players/players.component';
 
 
 
@@ -38,6 +39,7 @@ import { LeagueComponent } from './dashboard/league/league.component';
     MyTeamComponent,
     ActionsComponent,
     LeagueComponent,
+    PlayersComponent,
   ],
   imports: [
     MaterialsModule,
