@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
+import { PlayerService } from '../commish-tools/player.service';
 import { AuthData } from './auth-data.model';
 
 @Injectable({
@@ -14,6 +15,7 @@ export class AuthService {
   constructor(
     private auth:AngularFireAuth,
     private router:Router,
+    private playerServ:PlayerService
   ) { }
 
   registerNewUser(authData:AuthData){
@@ -43,6 +45,7 @@ export class AuthService {
     this.isLoggedIn = false;
     this.authChange.next(false);
     this.router.navigate([''])
+    this.playerServ.cancelSubs()
   }
   initAuthListener(){
     this.auth.authState.subscribe(user => {

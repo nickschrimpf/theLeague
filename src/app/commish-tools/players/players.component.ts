@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table'
+import { Subscription } from 'rxjs';
 import { PlayerService } from '../player.service';
 import { Player } from '../players';
 
@@ -11,10 +12,10 @@ import { Player } from '../players';
   templateUrl: './players.component.html',
   styleUrls: ['./players.component.css']
 })
-export class PlayersComponent implements OnInit {
+export class PlayersComponent implements OnInit ,OnDestroy {
   dataSource = new MatTableDataSource<Player>();
   displayedColumns = ['team','name','position','college','dob','height','weight'];
-  
+  playerSubs:Subscription[] = []
 
 
 
@@ -23,7 +24,10 @@ export class PlayersComponent implements OnInit {
 
   ngOnInit(): void {
     this.playerServ.onfetchAllPlayers()
-    this.playerServ.playersChanged.subscribe(data => this.dataSource.data = data)
+    this.playerSubs.push(this.playerServ.playersChanged.subscribe(data => this.dataSource.data = data))
+  }
+  ngOnDestroy(): void {
+      this.playerSubs.forEach(sub => sub.unsubscribe())
   }
 
   applyFilter(event: Event) {

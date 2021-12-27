@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore  } from '@angular/fire/compat/firestore';
-import { Subject } from 'rxjs';
+import { Subject, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Player } from './players';
 
@@ -10,7 +10,7 @@ import { Player } from './players';
 export class PlayerService {
   playersChanged = new Subject<Player[]>()
   allCurrentPlayers:Player[] = []
-
+  playerSubs:Subscription[]
 
   constructor(private db:AngularFirestore,) { }
 
@@ -35,6 +35,10 @@ export class PlayerService {
         this.allCurrentPlayers = players;
         this.playersChanged.next([...players])
       })
+  }
+
+  cancelSubs(){
+    this.playerSubs.forEach(sub => sub.unsubscribe())
   }
 
 }
