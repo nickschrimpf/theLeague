@@ -7,6 +7,10 @@
         <mat-icon>login</mat-icon>
         <span class="nav-caption">Login</span>
     </a>
+    <a *ngIf="isLoggedIn" mat-list-item (click)="onClose()"  routerLink="/dashboard">
+        <mat-icon>dashboard</mat-icon>
+        <span class="nav-caption">dashboard</span>
+    </a>
     <a *ngIf="isLoggedIn" mat-list-item   routerLink="">
         <button (click)="onLogOut()" mat-icon-button >
             <mat-icon>eject</mat-icon>

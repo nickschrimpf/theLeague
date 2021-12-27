@@ -13,6 +13,7 @@
     <span class="example-spacer"></span>
     <div class="desk-top--nav">
         <ul class="navItems">
+            <li><a *ngIf="isloggedIn" routerLink="/dashboard">Dashboard</a></li>
             <li><a *ngIf="!isloggedIn" routerLink="/signup">Sign Up</a></li>
             <li><a *ngIf="!isloggedIn" routerLink="/login">Login</a></li>
             <li><a (click)="onLogOut()" *ngIf="isloggedIn">Log Out</a></li>
