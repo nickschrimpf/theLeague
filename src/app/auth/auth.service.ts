@@ -53,7 +53,7 @@ export class AuthService {
       }else{
         this.isLoggedIn = false;
         this.authChange.next(false);
-        this.router.navigate(['/login']);
+        this.router.navigate(['']);
       }
     })
   }

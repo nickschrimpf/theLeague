@@ -1,3 +1,7 @@
+.sign-up-form{
+    max-width: 300px;
+    margin: auto auto;
+}
 mat-form-field{
     width: 300px;
     margin: .25rem auto;

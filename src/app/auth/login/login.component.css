@@ -1,10 +1,14 @@
+.logIn-form{
+    width: 300px;
+    margin: auto auto;
+}
 .log-in-form--items {
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
 }
 mat-form-field{
     width: 300px;
-    margin: auto auto;
-    
+    margin: auto auto; 
 }
 
