@@ -12,8 +12,8 @@ import { Player } from '../players';
   styleUrls: ['./players.component.css']
 })
 export class PlayersComponent implements OnInit {
-  dataSource = new MatTableDataSource<Player>()
-  displayedColumns = ['name','position','team','college','dob','height','weight']
+  dataSource = new MatTableDataSource<Player>();
+  displayedColumns = ['team','name','position','college','dob','height','weight'];
   
 
 
@@ -26,6 +26,9 @@ export class PlayersComponent implements OnInit {
     this.playerServ.playersChanged.subscribe(data => this.dataSource.data = data)
   }
 
-  
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 
 }

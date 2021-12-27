@@ -1,0 +1,23 @@
+.demo-table {
+  width: 80%;
+  margin: auto auto;
+}
+
+.mat-column-position {
+  text-align: center;
+}
+
+.mat-column-name {
+  padding-left:.5rem;
+  font-size: 20px;
+  text-align:center
+}
+
+.mat-column-weight {
+  font-style: italic;
+}
+
+.mat-column-team {
+  width: 2rem;
+  font-weight: bold;
+}
