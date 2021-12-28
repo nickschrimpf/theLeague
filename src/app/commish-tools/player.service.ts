@@ -38,7 +38,9 @@ export class PlayerService {
   }
 
   cancelSubs(){
-    this.playerSubs.forEach(sub => sub.unsubscribe())
+    if(this.playerSubs){
+      this.playerSubs.forEach(sub => sub.unsubscribe())
+    }
   }
 
 }

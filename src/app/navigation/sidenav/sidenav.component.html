@@ -11,10 +11,12 @@
         <mat-icon>dashboard</mat-icon>
         <span class="nav-caption">dashboard</span>
     </a>
-    <a *ngIf="isLoggedIn" mat-list-item   routerLink="">
-        <button (click)="onLogOut()" mat-icon-button >
+    
+    <div class="logOut" *ngIf="isLoggedIn"  mat-list-item >
+        <button (click)="onLogOut()" mat-icon-button>
             <mat-icon>eject</mat-icon>
             <span class="nav-caption">log Out</span>
         </button>
-    </a>
+    </div>
+    
 </mat-nav-list>

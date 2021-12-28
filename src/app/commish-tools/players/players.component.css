@@ -1,23 +1,22 @@
 .demo-table {
-  width: 80%;
-  margin: auto auto;
+    width: 100%;
 }
 
-.mat-column-position {
-  text-align: center;
-}
-
-.mat-column-name {
-  padding-left:.5rem;
-  font-size: 20px;
-  text-align:center
-}
-
-.mat-column-weight {
-  font-style: italic;
-}
-
-.mat-column-team {
-  width: 2rem;
-  font-weight: bold;
+@media screen and (min-width:750px) {
+    .demo-table {
+        width: 80%;
+        margin: auto auto;
+    }
+    .mat-column-name {
+        padding-left:.5rem;
+        font-size: 20px;
+        text-align:center
+    }
+    .mat-column-position {
+        text-align: center;
+    }
+    .mat-column-team {
+        width: 2rem;
+        font-weight: bold;
+    }
 }
