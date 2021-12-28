@@ -12,7 +12,7 @@ export class PlayerService {
   allCurrentPlayers:Player[] = []
   playerSubs:Subscription[]
 
-  constructor(private db:AngularFirestore,) { }
+  constructor(private db:AngularFirestore) { }
 
   onfetchAllPlayers(){
     this.db.collection('players')
