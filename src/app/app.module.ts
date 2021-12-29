@@ -14,7 +14,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidenavComponent } from './navigation/sidenav/sidenav.component';
 import { HeaderComponent } from './navigation/header/header.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire/compat';
 import { HomeComponent } from './dashboard/home/home.component';
 import { CommishToolsComponent } from './commish-tools/commish-tools.component';
@@ -22,6 +22,8 @@ import { MyTeamComponent } from './dashboard/my-team/my-team.component';
 import { ActionsComponent } from './dashboard/actions/actions.component';
 import { LeagueComponent } from './dashboard/league/league.component';
 import { PlayersComponent } from './commish-tools/players/players.component';
+import { TeamManagerComponent } from './commish-tools/team-manager/team-manager.component';
+import { TeamEditComponent } from './commish-tools/team-manager/team-edit/team-edit.component';
 
 
 
@@ -40,12 +42,15 @@ import { PlayersComponent } from './commish-tools/players/players.component';
     ActionsComponent,
     LeagueComponent,
     PlayersComponent,
+    TeamManagerComponent,
+    TeamEditComponent,
   ],
   imports: [
     MaterialsModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),

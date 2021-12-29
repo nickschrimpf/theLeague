@@ -18,4 +18,3 @@ $my-theme: mat.define-dark-theme((
 
 
 @include mat.all-component-themes($my-theme);
-@include mat.button-theme($my-theme);
