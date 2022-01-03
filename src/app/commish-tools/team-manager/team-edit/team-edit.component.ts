@@ -24,10 +24,13 @@ export class TeamEditComponent implements OnInit {
         }
       )
   }
-
+// initiate the form
+// if we are in edit mode console log edit mode
+// we need to handle new invites 
   private initForm(){
     let teamName = '';
     let ownerName = '';
+
     if (this.editMode){
       console.log('editMode')
     }

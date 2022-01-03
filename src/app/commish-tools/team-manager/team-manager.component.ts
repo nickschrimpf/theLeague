@@ -17,5 +17,9 @@ export class TeamManagerComponent implements OnInit {
   onCreateNewTeam(){
     this.router.navigate(['new'],{relativeTo:this.route})
   }
+
+  onNewContract(){
+    this.router.navigate(['newContract'],{relativeTo:this.route})
+  }
   
 }

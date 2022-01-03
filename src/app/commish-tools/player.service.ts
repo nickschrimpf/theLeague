@@ -15,26 +15,28 @@ export class PlayerService {
   constructor(private db:AngularFirestore) { }
 
   onfetchAllPlayers(){
-    this.db.collection('players')
-      .snapshotChanges()
-      .pipe(map(playerArray => {
-        return playerArray.map(player => {
-          return {
-            id:player.payload.doc.id,
-            name:player.payload.doc.data()['name'],
-            college:player.payload.doc.data()['college'],
-            dob:player.payload.doc.data()['dob'],
-            drafted:player.payload.doc.data()['drafted'],
-            height:player.payload.doc.data()['height'],
-            position:player.payload.doc.data()['position'],
-            team:player.payload.doc.data()['team'],
-            weight:player.payload.doc.data()['weight']
-          }
+    if(this.allCurrentPlayers.length < 1){
+      this.db.collection('players')
+        .snapshotChanges()
+        .pipe(map(playerArray => {
+          return playerArray.map(player => {
+            return {
+              id:player.payload.doc.id,
+              name:player.payload.doc.data()['name'],
+              college:player.payload.doc.data()['college'],
+              dob:player.payload.doc.data()['dob'],
+              drafted:player.payload.doc.data()['drafted'],
+              height:player.payload.doc.data()['height'],
+              position:player.payload.doc.data()['position'],
+              team:player.payload.doc.data()['team'],
+              weight:player.payload.doc.data()['weight']
+            }
+          })
+        })).subscribe((players:Player[]) => {
+          this.allCurrentPlayers = players;
+          this.playersChanged.next([...players])
         })
-      })).subscribe((players:Player[]) => {
-        this.allCurrentPlayers = players;
-        this.playersChanged.next([...players])
-      })
+    }
   }
 
   cancelSubs(){

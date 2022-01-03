@@ -24,6 +24,7 @@ import { LeagueComponent } from './dashboard/league/league.component';
 import { PlayersComponent } from './commish-tools/players/players.component';
 import { TeamManagerComponent } from './commish-tools/team-manager/team-manager.component';
 import { TeamEditComponent } from './commish-tools/team-manager/team-edit/team-edit.component';
+import { ContractEditComponent } from './commish-tools/team-manager/contract-edit/contract-edit.component';
 
 
 
@@ -44,6 +45,7 @@ import { TeamEditComponent } from './commish-tools/team-manager/team-edit/team-e
     PlayersComponent,
     TeamManagerComponent,
     TeamEditComponent,
+    ContractEditComponent,
   ],
   imports: [
     MaterialsModule,
