@@ -13,6 +13,7 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
 const routes: Routes = [
   {path:'signup',component:SignUpComponent},
+  {path:'signup:id',component:SignUpComponent},
   {path:'login',component:LoginComponent},
   {path:'',component:WelcomePageComponent},
   {path:'dashboard',component:HomeComponent,canActivate:[AuthGuard]},
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path:'team-manager',component:TeamManagerComponent,canActivate:[AuthGuard],
     children:[
       {path:'new',component:TeamEditComponent,canActivate:[AuthGuard]},
-      {path:'newContract',component:ContractEditComponent,canActivate:[AuthGuard]}
+      {path:':id',component:TeamEditComponent,canActivate:[AuthGuard]},
+      {path:':id/contracts',component:ContractEditComponent,canActivate:[AuthGuard]}
     ]
   }
 ];

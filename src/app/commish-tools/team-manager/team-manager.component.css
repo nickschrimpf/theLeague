@@ -1,0 +1,12 @@
+.team-manager{
+    display: flex;
+    flex-direction: row;
+    flex-basis: auto;
+}
+.team-list{
+    width: 35%;
+    border-right: .2rem solid green;
+}
+.team-outlet {
+    width: 65%;
+}

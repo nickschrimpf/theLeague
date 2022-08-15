@@ -1,0 +1,7 @@
+<div class="team-list">
+    <mat-icon (click)="onCreateNewTeam()">add</mat-icon>
+    <app-team-item 
+        *ngFor="let team of teams"
+        [itemTeams]=team>
+    </app-team-item>
+</div>

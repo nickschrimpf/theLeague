@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router, Params } from '@angular/router';
+import { TeamManagerService } from '../../team-manager.service';
 
 @Component({
   selector: 'app-team-edit',
@@ -8,17 +9,22 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
   styleUrls: ['./team-edit.component.css']
 })
 export class TeamEditComponent implements OnInit {
-  id:number;
+  id:string;
+  team
   editMode = false;
   teamForm: FormGroup;
 
-  constructor(private route:ActivatedRoute,private router:Router) { }
+  constructor(
+    private route:ActivatedRoute,
+    private router:Router,
+    private teamService:TeamManagerService
+  ) { }
 
   ngOnInit(): void {
     this.route.params
       .subscribe(
         (params:Params) => {
-          this.id = +params['id'];
+          this.id = params['id'];
           this.editMode = params['id'] != null;
           this.initForm()
         }
@@ -32,12 +38,16 @@ export class TeamEditComponent implements OnInit {
     let ownerName = '';
 
     if (this.editMode){
-      console.log('editMode')
+      this.team = this.teamService.getTeamById(this.id)
+      teamName = this.team.teamName
+      ownerName = this.team.owner
     }
     this.teamForm = new FormGroup({
       teamName:new FormControl(teamName, Validators.required),
       ownerName:new FormControl(ownerName, Validators.required)
     })
   }
-  
+  onContractAdd(){
+    this.router.navigate(['contracts'],{relativeTo: this.route})
+  }
 }

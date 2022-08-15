@@ -2,5 +2,5 @@ form{
     width: 300px;
     display:flex;
     flex-direction: column;
-    margin: auto auto;
+    margin: auto 2rem;
 }

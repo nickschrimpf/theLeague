@@ -1,5 +1,10 @@
-<p>team-manager works!</p>
-<button mat-raised-button (click)="onCreateNewTeam()">create team</button>
-<button mat-raised-button (click)="onNewContract()" color="accent">Contract player to team</button>
+<div class="team-manager">
+    <div class="team-list">
+        <app-team-list></app-team-list>
+    </div>
+    <div class="team-outlet">
+        <router-outlet></router-outlet>
+    </div>
+</div>
 
-<router-outlet></router-outlet>
+

@@ -25,6 +25,8 @@ import { PlayersComponent } from './commish-tools/players/players.component';
 import { TeamManagerComponent } from './commish-tools/team-manager/team-manager.component';
 import { TeamEditComponent } from './commish-tools/team-manager/team-edit/team-edit.component';
 import { ContractEditComponent } from './commish-tools/team-manager/contract-edit/contract-edit.component';
+import { TeamListComponent } from './commish-tools/team-manager/team-list/team-list.component';
+import { TeamItemComponent } from './commish-tools/team-manager/team-item/team-item.component';
 
 
 
@@ -46,6 +48,8 @@ import { ContractEditComponent } from './commish-tools/team-manager/contract-edi
     TeamManagerComponent,
     TeamEditComponent,
     ContractEditComponent,
+    TeamListComponent,
+    TeamItemComponent,
   ],
   imports: [
     MaterialsModule,
